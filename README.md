@@ -1,3 +1,32 @@
 # Bankraft
 Spigot/Bukkit Banking plugin
-yes
+
+Brankraft currently comes with a GUI-based bank interaction system and 3 commands.
+
+Configurable interest intervals and amounts.
+
+Multiple accounts per person, limit configurable in the config, and extremely easy to use.
+
+## Servers:
+* Build All Ya Can II
+  * bayc.ddns.net
+* Want your server here? Private message me!
+
+## Permissions:
+* bankraft.use
+  * The Only permission
+  * Grants access to all of the commands
+
+## Commands:
+* /bank
+  * Used to access the bank management screen.
+  * Click on a bank account to deposit or withdraw.
+* /bank create <name>
+  * Creates the bank account <name>
+* /bank delete <name>
+  * Deleted the bank account <name> provided that the player was the creator of that account.
+* /bank help
+  * Display all the commands and how to use them.
+  * 
+## Planned Features:
+* Configurable taxes
