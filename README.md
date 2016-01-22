@@ -27,6 +27,6 @@ Multiple accounts per person, limit configurable in the config, and extremely ea
   * Deleted the bank account <name> provided that the player was the creator of that account.
 * /bank help
   * Display all the commands and how to use them.
-  * 
+
 ## Planned Features:
 * Configurable taxes
