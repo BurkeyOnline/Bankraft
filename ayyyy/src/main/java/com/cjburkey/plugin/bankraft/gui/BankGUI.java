@@ -35,7 +35,7 @@ public class BankGUI {
 				money += Account.getMoney(player, acc);
 			}
 			tBalance = Util.nameStack(tBalance, start + Bankraft.getEcon().format(money));
-			inv.setItem(inv.getSize() - 2, pBalance);
+			inv.setItem(inv.getSize() - 2, tBalance);
 		} else {
 			ItemStack help = Util.nameStack(Util.stringToStack(Util.getCFString("No Item")), "&l&4No accounts found!  &o/bank create");
 			inv.addItem(help);
