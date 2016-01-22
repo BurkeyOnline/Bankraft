@@ -1,0 +1,28 @@
+# Bankraft 1.2.0
+# Created by CJ Burkey
+
+# Bank GUI Name
+GUI Name: '&2Bank'
+
+# Max Number of Accounts
+Max Acc: 4
+
+# GUI Items
+# If two of these are the same item,
+# there may be some unexpected behavior!
+Account Item: CHEST
+Balance Item: GOLD_INGOT
+Deposit Item: EMERALD
+DepWith Item: DIAMOND
+Back Item: BARRIER
+BackAccount Item: ARROW
+No Item: SIGN
+
+# Time between adds in seconds
+Time Between: 120
+
+# Amount multiplyed Ex: 1.005 = 0.5%
+Inter Amount: 1.005
+
+# Require player to be online to get interest
+Require Online: true

@@ -1,0 +1,20 @@
+name: Bankraft
+main: com.cjburkey.plugin.bankraft.Bankraft
+author: CJ Burkey
+database: false
+prefix: Bankraft
+version: 1.2.0
+website: https://www.spigotmc.org/resources/hotbar-survival.16444/
+depend: [Vault, ItemNBTAPI]
+
+permission:
+  bankraft.use:
+    description: Allow usage of Bankraft commands.
+    default: true
+
+commands:
+  bank:
+    description: The main Bankraft command/
+    usage: /<command> help
+    permission: bankraft.use
+    permission-message: '§4You do not have permission to use /bank'
