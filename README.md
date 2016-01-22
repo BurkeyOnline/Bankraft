@@ -8,7 +8,7 @@ Configurable interest intervals and amounts.
 Multiple accounts per person, limit configurable in the config, and extremely easy to use.
 
 ## Dependancies:
-* Vault: [Download](https://www.spigotmc.org/resources/item-nbt-api.7939/)
+* Vault: [Download](http://dev.bukkit.org/bukkit-plugins/vault/)
 * ItemNBTAPI: [Download](https://www.spigotmc.org/resources/item-nbt-api.7939/)
 
 ## Servers:
