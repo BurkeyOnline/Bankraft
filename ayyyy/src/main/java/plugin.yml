@@ -3,8 +3,8 @@ main: com.cjburkey.plugin.bankraft.Bankraft
 author: CJ Burkey
 database: false
 prefix: Bankraft
-version: 1.2.0
-website: https://www.spigotmc.org/resources/hotbar-survival.16444/
+version: 1.2.1.1
+website: https://github.com/cjburkey01/Bankraft/
 depend: [Vault, ItemNBTAPI]
 
 permission:
