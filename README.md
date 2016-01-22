@@ -15,7 +15,7 @@ Multiple accounts per person, limit configurable in the config, and extremely ea
 * Build All Ya Can II
   * [Website](http://cjburkey.com)
   * bayc.ddns.net
-* Want your server here? Private message me!
+* Want your server here? Private message me on Spigot [here](https://www.spigotmc.org/resources/authors/cjburkey01.98921/).
 
 ## Permissions:
 * bankraft.use
