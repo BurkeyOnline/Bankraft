@@ -1,0 +1,19 @@
+name: Shoppe
+main: com.cjburkey.plugin.shoppe.Shoppe
+author: CJ Burkey
+database: false
+version: 1.0.0
+website: https://github.com/BurkeyOnline/Shoppe/
+depend: [Vault]
+
+permission:
+  shoppe.use:
+    description: Allow usage of the Shoppe command.
+    default: true
+
+commands:
+  shop:
+    description: Open the GUI shop
+    usage: /<command>
+    permission: shoppe.use
+    permission-message: '§4You do not have permission to use /shop'
