@@ -22,7 +22,7 @@ public class BankGUI {
 		if(accounts.size() > 0) {
 			for(String acc : accounts) {
 				ItemStack stack = Util.stringToStack(Util.getCFString("Account Item"));
-				stack = Util.nameStack(stack, "&2" + acc);
+				stack = Util.loreStack(Util.nameStack(stack, "&2" + acc), Bankraft.getEcon().format(Account.getMoney(player, acc)));
 				stack = Util.addNBT(stack, "acc", acc);
 				inv.addItem(stack);
 			}

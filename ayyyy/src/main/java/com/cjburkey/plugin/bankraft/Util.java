@@ -1,5 +1,7 @@
 package com.cjburkey.plugin.bankraft;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -57,6 +59,15 @@ public class Util {
 	
 	public static final int getCFInt(String s) {
 		return Bankraft.getPlugin().getConfig().getInt(s);
+	}
+	
+	public static final ItemStack loreStack(ItemStack s, String lore) {
+		ItemMeta meta = s.getItemMeta();
+		List<String> loree = new ArrayList<String>();
+		loree.add(lore);
+		meta.setLore(loree);
+		s.setItemMeta(meta);
+		return s;
 	}
 	
 }
