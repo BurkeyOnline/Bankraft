@@ -1,12 +1,10 @@
 package com.cjburkey.plugin.bankraft;
 
 import java.util.UUID;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 import com.cjburkey.plugin.bankraft.econ.Account;
 import com.cjburkey.plugin.bankraft.gui.BankGUI;
 

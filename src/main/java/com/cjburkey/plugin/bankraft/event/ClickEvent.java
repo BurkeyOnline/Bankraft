@@ -6,10 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-
 import com.cjburkey.plugin.bankraft.Util;
 import com.cjburkey.plugin.bankraft.gui.BankGUI;
-
 import de.tr7zw.itemnbtapi.NBTItem;
 
 public class ClickEvent implements Listener {
@@ -45,6 +43,8 @@ public class ClickEvent implements Listener {
 				BankGUI.accountScreen(p.getUniqueId(), account);
 			} else if(i.getType().equals(Material.getMaterial(Util.getCFString("Back Item")))) {
 				BankGUI.listScreen(p.getUniqueId());
+			} else {
+				e.setCancelled(false);
 			}
 		}
 	}
