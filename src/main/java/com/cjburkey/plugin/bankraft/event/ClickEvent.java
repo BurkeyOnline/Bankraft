@@ -6,11 +6,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-import com.cjburkey.plugin.bankraft.Bankraft;
+
 import com.cjburkey.plugin.bankraft.Util;
-import com.cjburkey.plugin.bankraft.econ.Account;
-import com.cjburkey.plugin.bankraft.econ.PlayerInter;
 import com.cjburkey.plugin.bankraft.gui.BankGUI;
+
 import de.tr7zw.itemnbtapi.NBTItem;
 
 public class ClickEvent implements Listener {
@@ -36,19 +35,9 @@ public class ClickEvent implements Listener {
 				int amount = Integer.parseInt(it.getString("amt"));
 				boolean dep = Boolean.parseBoolean(it.getString("dep"));
 				if(dep) {
-					if(PlayerInter.take(p.getUniqueId(), amount)) {
-						Account.addMoney(p.getUniqueId(), account, amount);
-						p.sendMessage(Util.color("&2Moved " + Bankraft.getEcon().format(amount) + " to '" + account + "'"));
-					} else {
-						p.sendMessage(Util.color("&4Could not move money!"));
-					}
+					Util.deposit(p.getUniqueId(), account, amount);
 				} else {
-					if(Account.addMoney(p.getUniqueId(), account, -amount)) {
-						PlayerInter.give(p.getUniqueId(), amount);
-						p.sendMessage(Util.color("&2Took " + Bankraft.getEcon().format(amount) + " to '" + account + "'"));
-					} else {
-						p.sendMessage(Util.color("&4Could not move money!"));
-					}
+					Util.withdraw(p.getUniqueId(), account, amount);
 				}
 			} else if(i.getType().equals(Material.getMaterial(Util.getCFString("BackAccount Item")))) {
 				NBTItem it = new NBTItem(i);

@@ -11,6 +11,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import com.cjburkey.plugin.bankraft.econ.Account;
+import com.cjburkey.plugin.bankraft.econ.PlayerInter;
+
 import de.tr7zw.itemnbtapi.NBTItem;
 
 public class Util {
@@ -70,6 +73,30 @@ public class Util {
 		meta.setLore(loree);
 		s.setItemMeta(meta);
 		return s;
+	}
+	
+	public static final void deposit(UUID player, String account, double amount) {
+		Player p = Bankraft.getPlugin().getServer().getPlayer(player);
+		if(Account.accountExists(player, account)) {
+			if(PlayerInter.take(player, amount)) {
+				Account.addMoney(player, account, amount);
+				p.sendMessage(Util.color("&2Transaction success!"));
+				return;
+			}
+		}
+		p.sendMessage(Util.color("&4Transaction failed!"));
+	}
+	
+	public static final void withdraw(UUID player, String account, double amount) {
+		Player p = Bankraft.getPlugin().getServer().getPlayer(player);
+		if(Account.accountExists(player, account)) {
+			if(Account.addMoney(player, account, -amount)) {
+				PlayerInter.give(player, amount);
+				p.sendMessage(Util.color("&2Transaction success!"));
+				return;
+			}
+		}
+		p.sendMessage(Util.color("&4Transaction failed!"));
 	}
 	
 }
