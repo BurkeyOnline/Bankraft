@@ -23,14 +23,18 @@ Multiple accounts per person, limit configurable in the config, and extremely ea
   * Grants access to all of the commands
 
 ## Commands:
-* /bank
+* ```/bank```
   * Used to access the bank management screen.
   * Click on a bank account to deposit or withdraw.
-* /bank create <name>
-  * Creates the bank account <name>
-* /bank delete <name>
-  * Deleted the bank account <name> provided that the player was the creator of that account.
-* /bank help
+* ```/bank create <name>```
+  * Creates the bank account ```<name>```
+* ```/bank delete <name>```
+  * Deleted the bank account ```<name>``` provided that the player was the creator of that account.
+* ```/bank deposit <name> <amount>```
+  * Adds ```<amount>``` to ```<name>```
+* ```/bank withdraw <name> <amount>```
+  * Removed ```<amount>``` from ```<name>```
+* ```/bank help```
   * Display all the commands and how to use them.
 
 ## Planned Features:
