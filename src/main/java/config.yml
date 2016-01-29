@@ -26,3 +26,9 @@ Inter Amount: 1.005
 
 # Require player to be online to get interest
 Require Online: true
+
+# Taxes
+TaxAmount: 1200
+
+# Amount
+TaxAmount: 0.03

@@ -18,11 +18,11 @@ public class BankGUI {
 		Inventory inv = Bukkit.createInventory(p, Util.getInventorySize(Util.getCFInt("Max Acc")) + 9, Util.getCFString("GUI Name"));
 
 		ItemStack pBalance = Util.stringToStack(Util.getCFString("Balance Item"));
-		pBalance = Util.nameStack(pBalance, "&2Pocket Money: " + Bankraft.getEcon().format(Bankraft.getEcon().getBalance(p)));
+		pBalance = Util.nameStack(pBalance, "&2Pocket Money: " + Util.format(Bankraft.getEcon().getBalance(p)));
 		if(accounts.size() > 0) {
 			for(String acc : accounts) {
 				ItemStack stack = Util.stringToStack(Util.getCFString("Account Item"));
-				stack = Util.loreStack(Util.nameStack(stack, "&2" + acc), Bankraft.getEcon().format(Account.getMoney(player, acc)));
+				stack = Util.loreStack(Util.nameStack(stack, "&2" + acc), Util.format(Account.getMoney(player, acc)));
 				stack = Util.addNBT(stack, "acc", acc);
 				inv.addItem(stack);
 			}
@@ -34,7 +34,7 @@ public class BankGUI {
 			for(String acc : accounts) {
 				money += Account.getMoney(player, acc);
 			}
-			tBalance = Util.nameStack(tBalance, start + Bankraft.getEcon().format(money));
+			tBalance = Util.nameStack(tBalance, start + Util.format(money));
 			inv.setItem(inv.getSize() - 2, tBalance);
 		} else {
 			ItemStack help = Util.nameStack(Util.stringToStack(Util.getCFString("No Item")), "&l&4No accounts found!  &o/bank create");
@@ -50,8 +50,8 @@ public class BankGUI {
 		double aBal = Account.getMoney(player, account);
 		Inventory inv = Bukkit.createInventory(p, 9, Util.getCFString("GUI Name"));
 		
-		ItemStack balanceItem = Util.nameStack(Util.stringToStack(Util.getCFString("Balance Item")), "&2Account Balance: &l" + Bankraft.getEcon().format(aBal));
-		ItemStack playerItem = Util.nameStack(Util.stringToStack(Util.getCFString("Balance Item")), "&2Pocket Money: &l" + Bankraft.getEcon().format(Bankraft.getEcon().getBalance(p)));
+		ItemStack balanceItem = Util.nameStack(Util.stringToStack(Util.getCFString("Balance Item")), "&2Account Balance: &l" + Util.format(aBal));
+		ItemStack playerItem = Util.nameStack(Util.stringToStack(Util.getCFString("Balance Item")), "&2Pocket Money: &l" + Util.format(Bankraft.getEcon().getBalance(p)));
 		ItemStack depositItem = Util.nameStack(Util.stringToStack(Util.getCFString("Deposit Item")), "&2Deposit");
 		ItemStack withdrawItem = Util.nameStack(Util.stringToStack(Util.getCFString("Deposit Item")), "&4Withdraw");
 		ItemStack backItem = Util.nameStack(Util.stringToStack(Util.getCFString("Back Item")), "&4Back");

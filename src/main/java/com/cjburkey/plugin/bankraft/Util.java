@@ -1,5 +1,6 @@
 package com.cjburkey.plugin.bankraft;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -94,6 +95,11 @@ public class Util {
 			}
 		}
 		p.sendMessage(Util.color("&4Transaction failed!"));
+	}
+	
+	public static final String format(double i) {
+		String better = Bankraft.getEcon().format(i).replaceAll("[^\\d.]", "");
+		return "$" + NumberFormat.getInstance().format(Double.parseDouble(better));
 	}
 	
 }
