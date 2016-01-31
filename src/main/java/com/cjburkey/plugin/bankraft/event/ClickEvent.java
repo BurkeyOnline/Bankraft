@@ -43,8 +43,6 @@ public class ClickEvent implements Listener {
 				BankGUI.accountScreen(p.getUniqueId(), account);
 			} else if(i.getType().equals(Material.getMaterial(Util.getCFString("Back Item")))) {
 				BankGUI.listScreen(p.getUniqueId());
-			} else {
-				e.setCancelled(false);
 			}
 		}
 	}
