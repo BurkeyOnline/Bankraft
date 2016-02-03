@@ -3,7 +3,7 @@ main: com.cjburkey.plugin.bankraft.Bankraft
 author: CJ Burkey
 database: false
 prefix: Bankraft
-version: 1.2.2.3
+version: 1.2.2.5
 website: https://github.com/BurkeyOnline/Bankraft/
 depend: [Vault, ItemNBTAPI]
 
