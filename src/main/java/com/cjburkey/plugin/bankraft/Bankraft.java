@@ -23,7 +23,7 @@ public class Bankraft extends JavaPlugin {
 		saveConfig();
 		
 		if(!setupEconomy()) {
-			Util.log("&4Vault not found! Plugin disabled.");
+			Util.log("&4There was an error with your economy.  Is Vaul installed?");
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		} else {
@@ -35,9 +35,10 @@ public class Bankraft extends JavaPlugin {
 		IO.getDataDir().mkdirs();
 		
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() { public void run() {
+			getServer().broadcastMessage("&2Interest added to all accounts.");
 			for(UUID p : Account.getPlayers()) {
 				boolean online = getServer().getPlayer(p) == null;
-				if(getConfig().getBoolean("Require Online") && online) {  } else {
+				if((getConfig().getBoolean("Require Online") && online) || (!getConfig().getBoolean("Require Online") && !online)) {
 					for(String acc : Account.getPlayerAccounts(p)) {
 						double money = Account.getMoney(p, acc);
 						money *= getConfig().getDouble("Inter Amount");
