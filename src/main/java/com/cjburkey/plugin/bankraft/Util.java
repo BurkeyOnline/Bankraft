@@ -78,11 +78,11 @@ public class Util {
 		if(Account.accountExists(player, account)) {
 			if(PlayerInter.take(player, amount)) {
 				Account.addMoney(player, account, amount);
-				p.sendMessage(Util.color("&2Transaction success!"));
+				p.sendMessage(Util.color(getCFString("Message TransSucc")));
 				return;
 			}
 		}
-		p.sendMessage(Util.color("&4Transaction failed!"));
+		p.sendMessage(Util.color(getCFString("Message TransFail")));
 	}
 	
 	public static final void withdraw(UUID player, String account, double amount) {
@@ -90,11 +90,11 @@ public class Util {
 		if(Account.accountExists(player, account)) {
 			if(Account.addMoney(player, account, -amount)) {
 				PlayerInter.give(player, amount);
-				p.sendMessage(Util.color("&2Transaction success!"));
+				p.sendMessage(Util.color(getCFString("Message TransSucc")));
 				return;
 			}
 		}
-		p.sendMessage(Util.color("&4Transaction failed!"));
+		p.sendMessage(Util.color(getCFString("Message TransFail")));
 	}
 	
 	public static final String format(double i) {

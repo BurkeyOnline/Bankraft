@@ -58,10 +58,10 @@ public class Account {
 			if(getPlayerAccounts(player).size() < Bankraft.getPlugin().getConfig().getInt("Max Acc")) {
 				return setMoney(player, name, 0.0d);
 			} else {
-				Bukkit.getServer().getPlayer(player).sendMessage(Util.color("&4Account limit reached!"));
+				Bukkit.getServer().getPlayer(player).sendMessage(Util.color(Util.getCFString("Message Limit")));
 			}
 		} else {
-			Bukkit.getServer().getPlayer(player).sendMessage(Util.color("&4Account already exists!"));
+			Bukkit.getServer().getPlayer(player).sendMessage(Util.color(Util.getCFString("Message Exist")));
 		}
 		return false;
 	}

@@ -17,18 +17,18 @@ public class Bank implements CommandExecutor {
 			} else if(args.length == 2) {
 				if(args[0].trim().equalsIgnoreCase("create")) {
 					if(Account.createAccount(((Player) sender).getUniqueId(), args[1])) {
-						sender.sendMessage(Util.color("&2Account created!"));
+						sender.sendMessage(Util.color(Util.getCFString("Message AccCreate")));
 					} else {
-						sender.sendMessage(Util.color("&4Account could not be created!"));
+						sender.sendMessage(Util.color(Util.getCFString("Message AccErr")));
 					}
 				} else if(args[0].trim().equalsIgnoreCase("delete")) {
 					if(Account.deleteAccount(((Player) sender).getUniqueId(), args[1])) {
-						sender.sendMessage(Util.color("&2Account deleted!"));
+						sender.sendMessage(Util.color(Util.getCFString("Message AccDel")));
 					} else {
-						sender.sendMessage(Util.color("&4Account could not be deleted!"));
+						sender.sendMessage(Util.color(Util.getCFString("Message AccErr")));
 					}
 				} else {
-					sender.sendMessage(Util.color("&4Usage: /bank [<create/delete/deposit/withdraw> <name>]"));
+					sender.sendMessage(Util.color(Util.getCFString("Message Usage")));
 				}
 			}else if(args.length == 3) {
 				try {
@@ -52,7 +52,7 @@ public class Bank implements CommandExecutor {
 					sender.sendMessage(Util.color("&l/bank withdraw <name> <amount>&r - Remove <amount> to <name>"));
 				}
 			} else {
-				sender.sendMessage(Util.color("&4Usage: /bank [<create/delete/deposit/withdraw> <name>]"));
+				sender.sendMessage(Util.color(Util.getCFString("Message Usage")));
 			} 
 		} else {
 			sender.sendMessage(Util.color("&4You must be a player to use /bank!"));

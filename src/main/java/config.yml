@@ -1,15 +1,8 @@
-# Bankraft 1.2.2.5
+# Bankraft 1.2.2.6
 # Created by CJ Burkey
 
-# Bank GUI Name
 GUI Name: '&2Bank'
-
-# Max Number of Accounts
-Max Acc: 4
-
-# GUI Items
-# If two of these are the same item,
-# there may be some unexpected behavior!
+Max Acc: 5
 Account Item: CHEST
 Balance Item: GOLD_INGOT
 Deposit Item: EMERALD
@@ -17,18 +10,18 @@ DepWith Item: DIAMOND
 Back Item: BARRIER
 BackAccount Item: ARROW
 No Item: SIGN
-
-# Time between adds in seconds
 Time Between: 120
-
-# Amount multiplyed Ex: 1.005 = 0.5%
 Inter Amount: 1.005
-
-# Require player to be online to get interest
 Require Online: true
 
-# Taxes
-TaxAmount: 1200
-
-# Amount
-TaxAmount: 0.03
+Message StartError: '&4There was an error with your economy.  Is Vault installed?'
+Message TransFail: '&4Transaction failed!'
+Message AccErr: '&4There was an error with your request!'
+Message Usage: '&4Usage: /bank [<create/delete/deposit/withdraw> <name> {amount}]'
+Message Limit: '&4Account limit reached!'
+Message Exist: '&4Account already exists!'
+Message StartWorked: '&2Vault found! Everything should work!'
+Message Interest: '&2Interest added to all accounts.'
+Message TransSucc: '&2Transaction success!'
+Message AccCreate: '&2Account created!'
+Message AccDel: '&2Account deleted!'

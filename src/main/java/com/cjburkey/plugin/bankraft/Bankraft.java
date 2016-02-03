@@ -23,11 +23,11 @@ public class Bankraft extends JavaPlugin {
 		saveConfig();
 		
 		if(!setupEconomy()) {
-			Util.log("&4There was an error with your economy.  Is Vaul installed?");
+			Util.log(Util.getCFString("Message StartError"));
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		} else {
-			Util.log("&2Vault found! Everything should work!");
+			Util.log(Util.getCFString("Message StartWorked"));
 		}
 		
 		getCommand("bank").setExecutor(new Bank());
@@ -35,7 +35,7 @@ public class Bankraft extends JavaPlugin {
 		IO.getDataDir().mkdirs();
 		
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() { public void run() {
-			getServer().broadcastMessage("&2Interest added to all accounts.");
+			getServer().broadcastMessage(Util.getCFString("Message Interest"));
 			for(UUID p : Account.getPlayers()) {
 				boolean online = getServer().getPlayer(p) == null;
 				if((getConfig().getBoolean("Require Online") && online) || (!getConfig().getBoolean("Require Online") && !online)) {
@@ -43,9 +43,6 @@ public class Bankraft extends JavaPlugin {
 						double money = Account.getMoney(p, acc);
 						money *= getConfig().getDouble("Inter Amount");
 						Account.setMoney(p, acc, money);
-					}
-					if(online) {
-						getServer().getPlayer(p).sendMessage(Util.color("&2Interest added to all of your accounts!"));;
 					}
 				}
 			}
