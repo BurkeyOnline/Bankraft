@@ -1,4 +1,4 @@
-# Bankraft 1.2.2.6
+# Bankraft 1.2.2.8
 # Created by CJ Burkey
 
 GUI Name: '&2Bank'
@@ -12,7 +12,6 @@ BackAccount Item: ARROW
 No Item: SIGN
 Time Between: 120
 Inter Amount: 1.005
-Require Online: true
 
 Message StartError: '&4There was an error with your economy.  Is Vault installed?'
 Message TransFail: '&4Transaction failed!'

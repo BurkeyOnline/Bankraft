@@ -35,14 +35,15 @@ public class Bankraft extends JavaPlugin {
 		IO.getDataDir().mkdirs();
 		
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() { public void run() {
-			getServer().broadcastMessage(Util.getCFString("Message Interest"));
 			for(UUID p : Account.getPlayers()) {
 				boolean online = getServer().getPlayer(p) == null;
-				if(getConfig().getBoolean("Require Online") && !online) { return; } else {
+				if(online) {
 					for(String acc : Account.getPlayerAccounts(p)) {
 						double money = Account.getMoney(p, acc);
+						double old = money;
 						money *= getConfig().getDouble("Inter Amount");
 						Account.setMoney(p, acc, money);
+						getServer().getPlayer(p).sendMessage("&2Interest added to '" + acc + "'.  New balance: " + Util.format(money) + ".  Old: " + Util.format(old));
 					}
 				}
 			}
