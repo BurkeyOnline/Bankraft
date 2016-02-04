@@ -38,7 +38,7 @@ public class Bankraft extends JavaPlugin {
 			getServer().broadcastMessage(Util.getCFString("Message Interest"));
 			for(UUID p : Account.getPlayers()) {
 				boolean online = getServer().getPlayer(p) == null;
-				if((getConfig().getBoolean("Require Online") && online) || (!getConfig().getBoolean("Require Online") && !online)) {
+				if(getConfig().getBoolean("Require Online") && !online) { return; } else {
 					for(String acc : Account.getPlayerAccounts(p)) {
 						double money = Account.getMoney(p, acc);
 						money *= getConfig().getDouble("Inter Amount");
