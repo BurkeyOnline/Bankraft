@@ -36,7 +36,7 @@ public class Bankraft extends JavaPlugin {
 		
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() { public void run() {
 			for(UUID p : Account.getPlayers()) {
-				boolean online = getServer().getPlayer(p) == null;
+				boolean online = getServer().getPlayer(p) != null;
 				if(online) {
 					for(String acc : Account.getPlayerAccounts(p)) {
 						double money = Account.getMoney(p, acc);
