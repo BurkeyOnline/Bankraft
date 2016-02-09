@@ -43,7 +43,7 @@ public class Bankraft extends JavaPlugin {
 						double old = money;
 						money *= getConfig().getDouble("Inter Amount");
 						Account.setMoney(p, acc, money);
-						getServer().getPlayer(p).sendMessage("&2Interest added to '" + acc + "'.  New balance: " + Util.format(money) + ".  Old: " + Util.format(old));
+						getServer().getPlayer(p).sendMessage(Util.color("&2Interest added to '" + acc + "'.  New balance: " + Util.format(money) + ".  Old: " + Util.format(old)));
 					}
 				}
 			}
