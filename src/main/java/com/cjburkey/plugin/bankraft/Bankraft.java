@@ -3,6 +3,7 @@ package com.cjburkey.plugin.bankraft;
 import java.util.UUID;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.Metrics;
 import com.cjburkey.plugin.bankraft.econ.Account;
 import com.cjburkey.plugin.bankraft.event.ClickEvent;
 import com.cjburkey.plugin.bankraft.io.IO;
@@ -18,6 +19,13 @@ public class Bankraft extends JavaPlugin {
 	
 	public void onEnable() {
 		plugin = this;
+		
+		try {
+			Metrics m = new Metrics(this);
+			m.start();
+		} catch(Exception e) {
+			Util.log("Failed to submit stats :(");
+		}
 		
 		getConfig().options().copyDefaults(true);
 		saveConfig();
